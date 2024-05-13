@@ -1,0 +1,44 @@
+<div class="ordered-products" *ngIf="product">
+  <div class="columns ordered">
+    <figure class="product-image image is-128x128">
+      <img src="http://localhost:1337{{ product.images }}" />
+    </figure>
+    <div class="content-column column">
+      <strong>{{ product.displayName }}</strong>
+    </div>
+    <div class="input-column column">
+      <button class="button" (click)="changeAmount(product, -1)">
+        <i class="fa-solid fa-minus"></i>
+      </button>
+      <input
+        class="input amount"
+        type="number"
+        min="0"
+        max="100"
+        [value]="product.amount"
+        (change)="upInput($event, product)"
+      />
+      <button
+        class="button"
+        (click)="changeAmount(product, 1)"
+        [disabled]="product.amount >= 100"
+      >
+        <i class="fa-solid fa-plus"></i>
+      </button>
+      <span [hidden]="product.amount < 100">
+        <p class="tag is-warning is-light">Maximaal aantal producten besteld</p>
+      </span>
+    </div>
+    <div class="totalPrice column">
+      {{ product.totalPrice | currency: "EUR" }}
+    </div>
+
+    <div class="column action-column">
+      <div class="deleteItem">
+        <span (click)="deleteProduct()" class="remove-item">
+          <i class="fa-solid fa-trash-can"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>

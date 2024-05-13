@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ean": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "mainSupplierKey": {
+      "type": "string"
+    },
+    "salesMargin": {
+      "type": "integer"
+    },
+    "passportCode": {
+      "type": "biginteger"
+    },
+    "images": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "inShop": {
+      "type": "boolean"
+    },
+    "archived": {
+      "type": "boolean"
+    },
+    "vatRate": {
+      "type": "string"
+    },
+    "isBundle": {
+      "type": "boolean"
+    },
+    "suppliers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product-attributes.product-supplier"
+    },
+    "descriptions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product-attributes.descriptions"
+    },
+    "properties": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product-attributes.properties"
+    },
+    "tags": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product-attributes.tags"
+    },
+    "bundleItems": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product-attributes.bundle-item"
+    },
+    "category": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product-attributes.categories"
+    },
+    "categoryCode": {
+      "type": "string"
+    }
+  }
+}

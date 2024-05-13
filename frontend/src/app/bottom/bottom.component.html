@@ -1,0 +1,67 @@
+<footer class="footer" *ngIf="(user$ | async)?.username !== ''">
+  <div class="container">
+    <div class="greencloud-icon">
+      <a href="https://www.thegreencloud.nl/home">
+        <img src="assets/greencloud.svg" alt="greencloud logo" width="185px" />
+      </a>
+    </div>
+    <div class="reference-text">
+      <strong class="help-text">We helpen je graag</strong>
+      <p class="bel-text">
+        Bel, mail of bezoek ons voor meer informatie over de producten of
+        bestellingen
+      </p>
+    </div>
+    <div class="contact-info">
+      <span class="icon">
+        <i class="fa-solid fa-phone" id="phone"></i>
+      </span>
+      <span>
+        <a href="tel:+310113-502324" class="info"
+          ><strong>0113-502324</strong></a
+        >
+      </span>
+      <br />
+      <span class="icon"><i class="fa-solid fa-envelope" id="mail"></i></span>
+      <span>
+        <a href="mailto:info@thegreencloud.nl" class="info">
+          <strong>info@thegreencloud.nl</strong></a
+        >
+      </span>
+    </div>
+  </div>
+  <div class="bottom-items">
+    <div class="container">
+      <div class="copyright-text">
+        <span class="icons">
+          <i class="fa-regular fa-copyright"></i>
+        </span>
+        <span> 2022 Greencloud - powered by Hydrozorg </span>
+      </div>
+
+      <div class="brand-icons">
+        <span class="icon">
+          <a
+            href=" https://www.linkedin.com/company/hydrozorg-interieurbeplanting/"
+            class="ld-brand"
+          >
+            <i class="fa-brands fa-linkedin fa-xl"></i
+          ></a>
+        </span>
+        <span class="icon">
+          <a href="https://twitter.com/hydrozorg" class="tw-brand">
+            <i class="fa-brands fa-twitter fa-xl"></i
+          ></a>
+        </span>
+        <span class="icon">
+          <a
+            href="https://www.facebook.com/HydrozorgInterieurbeplanting"
+            class="fb-brand"
+          >
+            <i class="fa-brands fa-facebook fa-xl"></i
+          ></a>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>

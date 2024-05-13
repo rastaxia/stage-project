@@ -1,0 +1,84 @@
+<div class="container mb-6">
+  <div class="text-top">
+    <div class="overzicht">
+      <i class="fa-solid fa-grip"></i>
+      overzicht
+    </div>
+    <h1 class="product-text">Producten</h1>
+  </div>
+  <div class="columns">
+    <div class="column is-one-fifth control">
+      <div class="filters">
+        <form [formGroup]="filterForm">
+          <div class="filter-text">Categorieën:</div>
+          <label class="filter-products">
+            <input
+              type="radio"
+              formControlName="categories"
+              [routerLink]="['/products']"
+              value="-1"
+            />
+            Alle categorieën
+            <span class="checkmark"></span>
+          </label>
+
+          <label
+            class="filter-products"
+            *ngFor="let category of categories$ | async"
+          >
+            <input
+              type="radio"
+              formControlName="categories"
+              [value]="category.code"
+              [routerLink]="['/products']"
+              [queryParams]="{ category: category.code }"
+            />
+            {{ category.name }}
+            <span class="checkmark"></span>
+          </label>
+          <div class="heightSlider" *ngIf="categories$ | async as category">
+            <div class="extraFilter"></div>
+            <p>Height</p>
+            <input
+              type="range"
+              formControlName="height"
+              value="{{ height }}"
+              min="10"
+              max="100"
+              [(ngModel)]="height"
+            />
+            <input
+              type="text"
+              formControlName="height"
+              id="heightInput"
+              value="{{ height }}"
+              [(ngModel)]="height"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="column">
+      <div
+        class="product-list columns"
+        infiniteScroll
+        [infiniteScrollDistance]="1"
+        [infiniteScrollThrottle]="850"
+        (scrolled)="onScroll()"
+      >
+        <product-card
+          class="column is-4"
+          [product]="products"
+          *ngFor="let products of products$ | async"
+        ></product-card>
+      </div>
+
+      <div *ngIf="isLoading$ | async" class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+<div class="container" *ngIf="product$ | async as product">
+  <div>
+    <br />
+    <a routerLink="/" class="overzicht-link">
+      <i class="fa-solid fa-angle-left"></i> Terug naar overzicht
+    </a>
+  </div>
+  <div class="columns">
+    <div class="image column is-three-fifths">
+      <img src="./assets/noImage.jpg" class="item-image" alt="Product Image" />
+    </div>
+    <div class="column">
+      <small>Product</small>
+      <h1 class="title">{{ product.displayName }}</h1>
+
+      <div class="price-section">
+        <span class="price">{{ price$ | async | currency: "EUR" }}</span>
+        <span> Per stuk</span>
+      </div>
+
+      <div class="control">
+        <div
+          *ngIf="!(basketProduct$ | async); else addToCartElement"
+          @addToCart
+        >
+          <button
+            (click)="addToBasket$.next()"
+            class="cartButton button is-rounded"
+          >
+            <i class="basket-icon fa-solid fa-basket-shopping"></i>
+            Plaats in winkel wagen
+          </button>
+        </div>
+      </div>
+      <ng-template #addToCartElement>
+        <div @addToCart class="added-input">
+          <p *ngIf="basketProduct$ | async as product">
+            &nbsp;
+            <span>
+              <button
+                class="button"
+                (click)="changeAmount(product, product.amount - 1)"
+              >
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <input
+                class="input amount"
+                type="number"
+                min="0"
+                max="100"
+                [value]="product.amount"
+                (change)="updateInput($event, product)"
+              />
+              <button
+                class="button"
+                (click)="changeAmount(product, product.amount + 1)"
+                [disabled]="product.amount >= 100"
+              >
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </span>
+            <br />
+            <span [hidden]="product.amount < 100">
+              <p class="tag is-warning is-light">
+                Maximaal aantal producten besteld
+              </p>
+            </span>
+          </p>
+        </div>
+      </ng-template>
+
+      <div class="product-summary">
+        <h2 class="specificatie">Specificaties</h2>
+        <div class="product-info">
+          <label *ngFor="let property of product.properties">
+            {{ property.key }}: {{ property.value }}
+            <br />
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

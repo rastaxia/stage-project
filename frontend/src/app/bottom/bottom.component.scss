@@ -1,0 +1,69 @@
+@import "~bulma/bulma";
+
+.footer {
+  padding: 2rem 0rem 0rem 0rem;
+  width: 100%;
+}
+
+.copyright-text {
+  float: left;
+  margin-top: 12px;
+}
+
+.brand-icons {
+  float: right;
+  margin-left: 20px;
+  padding-bottom: 12px;
+  margin-top: 12px;
+  background-color: none;
+  color: inherit;
+}
+
+.bottom-items {
+  padding-bottom: 20px;
+}
+
+.column {
+  padding-bottom: 0px;
+}
+
+.bel-text {
+  font-size: 14px;
+}
+
+.icon {
+  margin-right: 7px;
+}
+
+#mail {
+  color: #008c95;
+}
+
+#phone {
+  color: #008c95;
+}
+
+.fb-brand,
+.tw-brand,
+.ld-brand {
+  color: rgb(91, 91, 91);
+  background-color: none;
+  text-decoration: none;
+}
+
+.fb-brand:hover {
+  color: #1877f2;
+  background-color: none;
+  text-decoration: none;
+}
+
+.tw-brand:hover {
+  color: #1da1f2;
+  background-color: none;
+  text-decoration: none;
+}
+.ld-brand:hover {
+  color: #0a66c2;
+  background-color: none;
+  text-decoration: none;
+}

@@ -1,0 +1,52 @@
+<div class="container">
+  <p class="buying-text">Kopen</p>
+  <div class="product-box" *ngIf="totalAmount$ | async as productAmount">
+    <p class="product-total" [hidden]="productAmount > 1">
+      In totaal bestel je {{ productAmount }} los product
+    </p>
+    <p class="product-total" [hidden]="productAmount <= 1">
+      In totaal bestel je {{ productAmount }} producten
+    </p>
+    <p class="product-total-price" *ngIf="totalPrice$ | async as productTotal">
+      {{ productTotal + productTotal * 0.21 | currency: "EUR" }}
+    </p>
+  </div>
+  <br />
+  <div class="order-box">
+    <p class="ordernumber-text">voeg eventueel nog een order nummer toe</p>
+
+    <input type="text" class="ordernumber" />
+
+    <p class="delivery-adres">Afleveradres</p>
+    <p class="delivery-street">Streetname + housenumber</p>
+    <p class="delivery-zipcode">zipcode + province</p>
+    <label class="delivery-checkbox checkbox">
+      <input type="checkbox" />
+      Ander afleveradres
+    </label>
+  </div>
+  <br />
+  <div class="comment-box">
+    <p class="comment-text">Voeg een opmerking toe over je order</p>
+    <textarea class="comment-input textarea"></textarea>
+    <label class="acceptance-checkbox checkbox">
+      <input type="checkbox" />
+      ik ga akkoord met de <a>Algemene voorwaarden</a> en de
+      <a> Leveringsvoorwaarden</a>*
+    </label>
+    <br />
+    <label class="inform-customer checkbox">
+      <input type="checkbox" />
+      informeer klant
+    </label>
+    <br />
+    <button class="place-ordor button is-rounded" (click)="order()">
+      Plaats koop order
+    </button>
+    <br />
+    <p class="order-message">
+      vanaf dit punt gaan we voor jouw order opmaken. het kan zijn dat we eerst
+      contact met je opnemen voor wij de order doorvoeren
+    </p>
+  </div>
+</div>

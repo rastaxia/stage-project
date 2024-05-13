@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_product_attributes_bundle_items",
+  "info": {
+    "displayName": "BundleItem",
+    "icon": "shopping-bag",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "ean": {
+      "type": "string"
+    },
+    "amount": {
+      "type": "biginteger"
+    },
+    "name": {
+      "type": "string"
+    },
+    "alternatives": {
+      "type": "component",
+      "repeatable": true,
+      "component": "product-attributes.alternative"
+    },
+    "category": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product-attributes.categories"
+    }
+  }
+}

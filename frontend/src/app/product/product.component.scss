@@ -1,0 +1,62 @@
+@import "~bulma/bulma";
+
+.overzicht-link {
+  color: #4aaeb3;
+  font-weight: bold;
+}
+
+.columns {
+  margin-top: 24px;
+  .control {
+    border-top: 1px solid black;
+    margin-top: 10px;
+  }
+
+  .added-input {
+    margin-top: 10px;
+  }
+
+  .item-image {
+    width: 80% !important;
+    height: 90% !important;
+  }
+
+  .price {
+    font-size: 20px;
+    border-radius: 25px;
+    background: #f3f9f5;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    color: #62cd94;
+    font-weight: bold;
+  }
+
+  .product-info {
+    font-size: 14px;
+  }
+
+  .specificatie {
+    font-size: 24px;
+  }
+
+  .amount {
+    min-width: 50px;
+    max-width: 65px;
+  }
+
+  .cartButton {
+    color: white;
+    margin-top: 10px;
+    width: 300px;
+    background-color: #ff8942;
+
+    .basket-icon {
+      padding-right: 10px;
+    }
+
+    .cartButton:hover {
+      color: white;
+    }
+  }
+}

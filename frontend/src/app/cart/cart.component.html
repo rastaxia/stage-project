@@ -1,0 +1,117 @@
+<div *ngIf="totalAmount$ | async; else noOrders" class="container">
+  <span class="top-description">
+    <strong>Jouw bestellijst</strong>
+  </span>
+  <div class="cart-page">
+    <div class="productOverview">
+      <app-cart-product
+        *ngFor="let product of products$ | async"
+        [product]="product"
+      ></app-cart-product>
+    </div>
+  </div>
+
+  <h2 class="summary-text">Samengevat</h2>
+  <div class="summary">
+    <div class="summary-info">
+      <br />
+      <div
+        class="summary-product-amountprice"
+        *ngIf="totalAmount$ | async as productAmount"
+      >
+        <p class="summary-product-amount" [hidden]="productAmount > 1">
+          {{ productAmount }} product
+        </p>
+        <p class="summary-product-amount" [hidden]="productAmount <= 1">
+          {{ productAmount }} producten
+        </p>
+        <p
+          class="summary-product-price"
+          *ngIf="totalPrice$ | async as productTotal"
+        >
+          {{ productTotal | currency: "EUR" }}
+        </p>
+      </div>
+      <br />
+      <div class="leveringskosten">
+        <p class="summary-leveringskosten-text">Leveringskosten</p>
+        <p class="summary-leveringskosten-price">-</p>
+        <br />
+        <p class="summary-leveringskosten-info">
+          Wij komen de gekozen producten bij jou afleveren en neerzetten. Lees
+          hier meer over in onze
+        </p>
+        <a class="summary-leveringsvoorwaarden">leveringsvoorwaarden.</a>
+      </div>
+      <div class="summary-arrangementskosten">
+        <p class="summary-arrangementskosten-text">Arrangementskosten</p>
+        <p class="summary-arrangementskosten-price">-</p>
+        <br />
+        <p class="summary-arrangementskosten-small">arrangementskosten</p>
+      </div>
+      <div class="summary-divider"></div>
+      <div class="summary-btw">
+        <p class="summary-btw-procent">BTW 21%</p>
+        <p
+          class="summary-btw-price"
+          *ngIf="totalPrice$ | async as productTotal"
+        >
+          {{ productTotal * 0.21 | currency: "EUR" }}
+        </p>
+      </div>
+      <br />
+      <div class="summary-total">
+        <p class="summary-total-text">Totaal</p>
+        <p
+          class="summary-total-price"
+          *ngIf="totalPrice$ | async as productTotal"
+        >
+          {{ productTotal + productTotal * 0.21 | currency: "EUR" }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="agreement container" *ngIf="totalPrice$ | async as productTotal">
+  <div class="agreement-box box">
+    <p class="agreement-text">Overeenkomst</p>
+    <br />
+    <div class="agreement-buy">
+      <label class="agreement-radio">
+        <input type="radio" checked="checked" />
+        <p class="agreement-buy-text">Koop</p>
+        <span class="checkmark"></span>
+      </label>
+      <span class="dot"><p class="agreement-questionmark">?</p></span>
+      <p class="agreement-buy-price"></p>
+      <p
+        class="agreement-buy-price"
+        *ngIf="totalPrice$ | async as productTotal"
+      >
+        {{ productTotal | currency: "EUR" }}
+      </p>
+    </div>
+  </div>
+  <button class="stap2-button button is-rounded" routerLink="/bestelling">
+    Naar stap 2
+  </button>
+</div>
+
+<ng-template #noOrders>
+  <div class="noOrder container">
+    <div class="order-box">
+      <span class="no-Orders">
+        <p>U heeft geen producten in uw winkelmand</p>
+        <br />
+        <a
+          class="winkel-button button is-rounded"
+          routerLink="/products"
+          routerLinkActive="active"
+        >
+          Ga terug naar producten
+        </a>
+      </span>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,43 @@
+@import "~bulma/bulma";
+
+#login {
+  height: 100vh;
+  background: url("/assets/greenwall.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.login-panel {
+  background-color: white;
+  height: 100vh;
+  width: 50%;
+  float: right;
+  padding: 2rem;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.login-text {
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.login-button {
+  float: right;
+}
+
+.loginError {
+  padding-top: 5px;
+  color: red;
+}
+
+.incorrect {
+  padding: 12px;
+  text-align: center;
+}
+.field {
+  margin-bottom: 0px !important;
+}

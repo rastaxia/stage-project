@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_product_attributes_descriptions",
+  "info": {
+    "displayName": "descriptions",
+    "icon": "flag"
+  },
+  "options": {},
+  "attributes": {
+    "language": {
+      "type": "string"
+    },
+    "body": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_product_attributes_categories",
+  "info": {
+    "displayName": "Categories",
+    "icon": "align-left",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import "~bulma/bulma";
+
+.nav-bar round {
+  font-size: large;
+}
+
+#user-dropdown-menu {
+  top: 40px;
+}
+
+.dropdown {
+  cursor: pointer;
+}
+
+.dropdown-logout {
+  cursor: pointer;
+}
+.navbar-item {
+  margin-right: 5px;
+}
+
+.navbar-brand {
+  justify-content: flex-start;
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.navbar-end {
+  justify-content: flex-end;
+  margin-left: auto;
+  display: flex;
+  align-content: center;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hover {
+  cursor: default;
+  margin-right: 5px;
+  width: 0px;
+}
+
+.user-icon {
+  color: #008c95;
+  font-size: 24px;
+}
+
+.hover:hover {
+  color: white;
+}
+
+.username {
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+.basketAmount {
+  color: white;
+  background-color: #ff8942;
+  height: 25px;
+  min-width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 0 2px;
+}

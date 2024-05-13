@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "angular.ng-template",
+    "nrwl.angular-console",
+    "esbenp.prettier-vscode",
+    "firsttris.vscode-jest-runner",
+    "dbaeumer.vscode-eslint",
+    "mikerhyssmith.ts-barrelr",
+    "christian-kohler.npm-intellisense",
+    "coenraads.bracket-pair-colorizer",
+    "eamodio.gitlens",
+    "stylelint.vscode-stylelint",
+    "streetsidesoftware.code-spell-checker",
+    "vscode-icons-team.vscode-icons",
+    "wix.vscode-import-cost",
+    "kumar-harsh.graphql-for-vscode"
+  ]
+}

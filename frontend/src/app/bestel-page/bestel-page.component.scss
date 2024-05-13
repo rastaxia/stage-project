@@ -1,0 +1,73 @@
+.buying-text {
+  font-weight: bold;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.product-box {
+  padding: 12px;
+  padding-bottom: 40px;
+  background-color: #f3f9f5;
+  .product-total {
+    float: left;
+  }
+  .product-total-price {
+    float: right;
+    font-weight: bold;
+  }
+}
+.order-box {
+  background-color: #f3f9f5;
+  padding: 10px;
+  .ordernumber-text {
+    font-weight: bold;
+  }
+  .ordernumber {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .inkoop-order {
+    font-weight: bold;
+  }
+  .delivery-adres {
+    font-weight: bold;
+    color: gray;
+  }
+  .delivery-street {
+    color: gray;
+  }
+  .delivery-zipcode {
+    color: gray;
+    margin-bottom: 12px;
+  }
+}
+
+.comment-box {
+  padding: 10px;
+  margin-bottom: 80px;
+  .comment-text {
+    font-weight: bold;
+  }
+  .comment-input {
+    margin-bottom: 20px;
+  }
+  .acceptance-checkbox {
+    margin-bottom: 20px;
+  }
+  .inform-customer {
+    margin-bottom: 20px;
+  }
+  .place-ordor {
+    background: #008c95;
+    color: white;
+    float: right;
+  }
+  .order-message {
+    margin-top: 40px;
+  }
+}
+
+a {
+  color: black;
+  text-decoration: underline;
+}

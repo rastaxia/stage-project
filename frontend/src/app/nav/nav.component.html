@@ -1,0 +1,51 @@
+<div class="nav" *ngIf="(user$ | async)?.username !== ''">
+  <nav class="navbar" role="navigation">
+    <div class="navbar-brand">
+      <a href="https://www.thegreencloud.nl/home">
+        <img
+          src="./assets/greencloud.svg"
+          alt="greencloud logo"
+          width="150px"
+          height="250px"
+        />
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <ng-container>
+        <button class="navbar-item button is-rounded" routerLink="/">
+          <span class="icon">
+            <i class="fa-solid fa-leaf"></i>
+          </span>
+          <span> Producten </span>
+        </button>
+        <button class="navbar-item button is-rounded" routerLink="cart">
+          <span class="icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </span>
+          <div class="basketAmount" *ngIf="totalAmount$ | async as totalAmount">
+            <span [hidden]="totalAmount > 99">{{ totalAmount$ | async }}</span>
+            <span [hidden]="totalAmount <= 99"> 99+</span>
+          </div>
+        </button>
+        <div class="dropdown is-hoverable navbar-item">
+          <div class="dropdown-trigger">
+            <span class="icon">
+              <i class="user-icon fas fa-solid fa-user" id="user"></i>
+            </span>
+            <span>
+              <strong class="username">{{ (user$ | async)?.username }}</strong>
+            </span>
+          </div>
+          <div class="dropdown-menu" id="user-dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <div class="dropdown-item">
+                <span class="dropdown-logout" (click)="logout()">Logout</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </nav>
+</div>

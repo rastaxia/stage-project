@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_product_attributes_alternatives",
+  "info": {
+    "displayName": "alternative",
+    "icon": "circle-notch",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "amount": {
+      "type": "biginteger"
+    },
+    "ean": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "component",
+      "repeatable": false,
+      "component": "product-attributes.categories"
+    }
+  }
+}

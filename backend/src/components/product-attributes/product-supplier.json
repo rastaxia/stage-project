@@ -1,0 +1,41 @@
+{
+  "collectionName": "components_product_attributes_product_suppliers",
+  "info": {
+    "displayName": "supplier",
+    "icon": "user",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "key": {
+      "type": "string"
+    },
+    "itemCode": {
+      "type": "string"
+    },
+    "netPrice": {
+      "type": "integer"
+    },
+    "grossPrice": {
+      "type": "integer"
+    },
+    "sellingPrice": {
+      "type": "integer"
+    },
+    "discount": {
+      "type": "integer"
+    },
+    "stock": {
+      "type": "integer"
+    },
+    "stockAvailable": {
+      "type": "boolean"
+    },
+    "inShop": {
+      "type": "boolean"
+    }
+  }
+}

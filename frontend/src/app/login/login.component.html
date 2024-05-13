@@ -1,0 +1,74 @@
+<div id="login">
+  <div class="center-container login-panel">
+    <form [formGroup]="loginForm" (ngSubmit)="signIn()" class="login-form">
+      <h1 class="login-text">Inloggen</h1>
+      <div
+        class="incorrect notification is-danger is-light"
+        [hidden]="!(status$ | async)"
+      >
+        <span>incorrect Email of Wachtwoord</span>
+      </div>
+      <div class="field">
+        <strong>E-mailadres *</strong>
+        <p class="control has-icons-left has-icons-right">
+          <input
+            formControlName="email"
+            class="input"
+            type="email"
+            placeholder="e.g. alexis@gmail.com"
+            id="email"
+            required
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+        </p>
+        <div
+          class="loginError"
+          *ngIf="
+            loginForm.get('email')?.invalid &&
+            (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)
+          "
+        >
+          Voer een geldig email in
+        </div>
+      </div>
+      <br />
+      <div class="field">
+        <strong>Wachtwoord *</strong>
+        <p class="control has-icons-left">
+          <input
+            formControlName="password"
+            class="input"
+            type="password"
+            placeholder="************"
+            id="password"
+            required
+          />
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
+        <div
+          class="loginError"
+          *ngIf="
+            loginForm.get('password')?.invalid &&
+            (loginForm.get('password')?.dirty ||
+              loginForm.get('password')?.touched)
+          "
+        >
+          Voer een wachtwoord in
+        </div>
+      </div>
+      <br />
+      <button
+        type="submit"
+        class="button is-primary is-rounded login-button"
+        [disabled]="loginForm.invalid"
+      >
+        <span> Login </span>
+        <span class="icon"> <i class="fa-solid fa-chevron-right"></i></span>
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+.ordered-products {
+  margin-top: 30px;
+
+  .ordered {
+    background-color: #f3f9f5;
+    margin: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    .product-image {
+      display: flex;
+      margin: 10px;
+    }
+    .content-column {
+      height: 135px;
+      padding-top: 0px;
+      display: flex;
+      flex-direction: column;
+    }
+    .input-column {
+      display: flex;
+      justify-content: center;
+    }
+
+    .amount {
+      width: 4rem;
+    }
+
+    .totalPrice {
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .action-column {
+      max-width: 50px;
+      text-align: center;
+      .remove-item {
+        cursor: pointer;
+        .fa-trash-can {
+          color: red;
+        }
+      }
+    }
+  }
+}

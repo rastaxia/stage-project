@@ -1,0 +1,216 @@
+.top-description {
+  font-size: 36px;
+}
+
+.order-box {
+  height: 36rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .no-Orders {
+    text-align: center;
+  }
+  .cart-page {
+    margin-bottom: 20px;
+  }
+  .ordering {
+    background-color: #f3f9f5;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    min-width: 35vh;
+  }
+}
+
+.summary-text {
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.summary {
+  background-color: #f3f9f5;
+  .summary-info {
+    margin: 10px;
+    margin-right: 12px;
+    padding-bottom: 36px;
+    .summary-product-amountprice {
+      margin-bottom: 8px;
+      .summary-product-amount {
+        float: left;
+      }
+      .summary-product-price {
+        float: right;
+        font-weight: bold;
+      }
+    }
+    .leveringskosten {
+      margin-bottom: 8px;
+      .summary-leveringskosten-text {
+        float: left;
+      }
+      .summary-leveringskosten-price {
+        float: right;
+        font-weight: bold;
+      }
+      .summary-leveringskosten-info {
+        font-size: 14px;
+        font-style: oblique;
+      }
+      .summary-leveringsvoorwaarden {
+        font-size: 14px;
+        font-style: oblique;
+        color: green;
+      }
+    }
+    .summary-arrangementskosten {
+      .summary-arrangementskosten-text {
+        float: left;
+      }
+      .summary-arrangementskosten-price {
+        float: right;
+        font-weight: bold;
+      }
+      .summary-arrangementskosten-small {
+        font-style: oblique;
+        font-size: 14px;
+      }
+    }
+    .summary-divider {
+      border-top: 1px solid black;
+
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .summary-btw {
+      margin-bottom: 16px;
+      .summary-btw-procent {
+        float: left;
+      }
+      .summary-btw-price {
+        float: right;
+        font-weight: bold;
+      }
+    }
+    .summary-total {
+      .summary-total-text {
+        float: left;
+      }
+      .summary-total-price {
+        float: right;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.agreement {
+  margin-top: 50px;
+
+  .agreement-box {
+    padding: 12px;
+    .agreement-text {
+      font-weight: bold;
+    }
+    .agreement-buy-text {
+      float: left;
+    }
+    .agreement-buy-price {
+      float: right;
+      font-weight: bold;
+    }
+  }
+}
+
+.agreement-radio {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 3px;
+  cursor: pointer;
+  font-size: 15px;
+  color: black;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.agreement-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  position: absolute;
+  top: 3px;
+  left: 0;
+  height: 1rem;
+  width: 1rem;
+  background-color: rgb(255, 255, 255);
+  border-color: gray;
+  border-style: solid;
+  border-width: thin;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.agreement-radio:hover input ~ .checkmark {
+  background-color: white;
+}
+
+/* When the radio button is checked, add a blue background */
+.agreement-radio input:checked ~ .checkmark {
+  background-color: white;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.agreement-radio input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.agreement-radio .checkmark:after {
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #008c95;
+}
+
+.dot {
+  margin-left: 12px;
+  height: 25px;
+  width: 25px;
+  background-color: #008c95;
+  border-radius: 50%;
+  display: inline-block;
+  color: white;
+  .agreement-questionmark {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+}
+
+.stap2-button {
+  background-color: #77c19a;
+  color: white;
+  float: right;
+  margin-bottom: 50px;
+}
